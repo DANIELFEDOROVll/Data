@@ -18,22 +18,25 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="id" />
+            android:text="id"
+            android:textAlignment="center"/>
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textUSERNAME"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="имя пользователя" />
+            android:text="имя пользователя"
+            android:textAlignment="center"/>
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textBODY"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="текст комментария" />
+            android:text="текст комментария"
+            android:textAlignment="center"/>
 
     </LinearLayout>
 </FrameLayout>

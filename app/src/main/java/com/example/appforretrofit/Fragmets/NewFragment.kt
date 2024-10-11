@@ -5,9 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import com.example.appforretrofit.R
 import com.example.appforretrofit.Retrofit.Osnova
 import com.example.appforretrofit.Retrofit.ProductApi
+import com.example.appforretrofit.Vmodel
 import com.example.appforretrofit.databinding.FragmentNewBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -40,7 +42,13 @@ class NewFragment : Fragment(R.layout.fragment_new) {
 
             val com = Com(comment.id, comment.user.username, comment.body)
 
+            val sharedModel = ViewModelProvider(requireActivity()).get(Vmodel::class.java)
+            sharedModel.com = com
 
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView, SecondFragment())
+                .addToBackStack(null)
+                .commit()
         }
     }
 
